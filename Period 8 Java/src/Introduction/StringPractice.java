@@ -3,6 +3,7 @@ package Introduction;
 import java.util.Scanner;
 
 public class StringPractice {
+	
 	public static void main(String[] args) {
 		//demonstrateStringMethods();
 		createFields();
