@@ -26,7 +26,7 @@ public class GabrielMain {
 			response = promptInput();
 			
 			if(findKeyword(response,"good",0) >= 0){
-				print("That's awful. I hate you.");
+				print("Good for you.");
 			}
 			else if(response.indexOf("school") >= 0){
 				print("I hate school too.");
@@ -48,8 +48,11 @@ public class GabrielMain {
 		//make lower case
 		searchString = searchString.toLowerCase();
 		keyword = keyword.toLowerCase();
+		System.out.println("The phrase is "+searchString);
+		System.out.println("The keyword is "+keyword);
 		//find first position of keyword
-		int psn = searchString.indexOf(0);
+		int psn = searchString.indexOf(keyword);
+		System.out.println("The keyword was found at "+psn);
 		//keep searching until context keyword found
 		while(psn >= 0){
 			//assume preceded and followed by space
@@ -58,20 +61,47 @@ public class GabrielMain {
 			//check character in front, in it exists
 			if(psn > 0){
 				before = searchString.substring(psn-1,  psn);
+				System.out.println("The character before is "+before);
 			}
 			//check if there is a character after the keyword
 			if(psn + keyword.length() < searchString.length()){
 				after = searchString.substring(psn +keyword.length(), psn + keyword.length()+ 1);
+				System.out.println("The character after is "+after);
 			}
-			if(before.compareTo("a") < 0 && after.compareTo("a") < 0){
+			if(before.compareTo("a") < 0 && after.compareTo("a") < 0  && noNegations(searchString,psn)){
+				System.out.println("Found "+keyword+" at "+psn);
 				return psn;
 			}
 			else{
 				//psn+1 is one space after out current psn, so this finds the NEXT word
 				psn = searchString.indexOf(keyword,psn+1);
+				System.out.println("Did not find "+keyword+", checking position "+psn); 
 			}
 		}
 		return -1;
+	}
+	/*this is a helped method. A helped method is a method designed for "helping"
+	 * a larger method. Because of this, helper methods are generally private because 
+	 * they are only used by the methods they are helping.
+	 * ALSO, when you do your project, I expect to see helper methods because they also make
+	 * the code more readable.
+	 */
+	private static boolean noNegations(String searchString, int psn){
+		//check to see if the word "no" is in front of psn
+		/*check to see if there are three spaces in front then check to see if 
+		 * no is there.
+		 */
+		if(psn -3 >= 0 && searchString.substring(psn-3,psn).equals("no")){
+			return false;
+		}
+		if(psn -4 >= 0 && searchString.substring(psn-4,psn).equals("not ")){
+			return false;
+		}
+		//check for "never"
+		if(psn -6 >= 0 && searchString.substring(psn-6,psn).equals("never ")){
+			return false;
+		}
+		return true;
 	}
 		
 	public static void promptName() {
