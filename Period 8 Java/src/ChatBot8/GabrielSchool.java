@@ -19,4 +19,16 @@ public class GabrielSchool implements ChatBot {
 		}
 	}
 
+	public boolean isTriggered(String userInput) {
+		String[] triggers = {"school", "class", "teacher"};
+		//could create a loop loop to iterate through array of triggers
+		if(GabrielMain.findKeyword(userInput, "school", 0) >= 0){
+			return true;
+		}
+		if(GabrielMain.findKeyword(userInput, "class", 0) >= 0){
+			return true;
+		}
+		return false;
+	}
+
 }
