@@ -4,11 +4,52 @@ public class ArraysPractice {
 	
 	static boolean[] boos3;
 
-	public static void main(String[] args) {
+	public static void main(String[] args){
+		//how do you time a process?
+		long currentTime = System.currentTimeMillis();
+		
+		int x = 10;
+		
+		
+		
+		String[] someStrings = new String[1000];
+		standardPopulate(someStrings);
+		String s = someStrings[999];
+		makeSpecial(s);
+		print(someStrings);
+		
+		long endTime = System.currentTimeMillis();
+		System.out.println("The process took "+(endTime-currentTime)+" ms.");
+	}
+	
+	private static void increase(int i){
+		i++;
+		//same as i = i+1;
+	}
+	
+	private static void makeSpecial(String s) {
+		s = "THIS STRING IS SPECIAL!";
+	}
+
+	private static void print(String[] s) {
+		for(int i =0; i < s.length; i++){
+			System.out.println(s[i]);
+		}
+	}
+
+	private static void standardPopulate(String[] s) {
+		for(int i =0; i < s.length; i++){
+			s[i] = "String #"+(i+1);
+		}
+	}
+	
+	public static void initializingArrayExample() {
 		/** Arrays: fixed length, indices start at zero, indexed(ordered), common data type, 
 		  	       arrays of any type must be Object[]
 		  -If you want to put different primitive types into an array, you must use their wrapper class(classes 
 		   that represent the primitive types?). 
+		   -Primitive types are already in the system and start as zero. Cannot mix types.
+		   -Object arrays, unless initialized, start as null and can have different types of objects of common super class.
 		 */
 		//two different ways to instatiate an array
 		boolean[] boos1 = new boolean[3];
@@ -58,5 +99,4 @@ public class ArraysPractice {
 			System.out.println(s);
 		}
 	}
-
 }
