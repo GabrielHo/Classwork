@@ -8,23 +8,82 @@ public class ArraysPractice {
 		//how do you time a process?
 		long currentTime = System.currentTimeMillis();
 		
-		int x = 10;
+		int[] fiftyNumbers = new int[50];
+		populate(fiftyNumbers);
+		print(fiftyNumbers);
+		randomize(fiftyNumbers, 50);
+		print(fiftyNumbers);
+		rollDice(fiftyNumbers, 3);
+		//count each die roll and provide a percentage.
+		countResult(fiftyNumbers, 3);
 		
+		long endTime = System.currentTimeMillis();
+		System.out.println("The process took "+(endTime-currentTime)+" ms.");
+	}
+	
+	private static void populate(int[] s){
+		for(int i =0; i <s.length; i++){
+			s[i] = i+1;
+		}
+	}
+	
+	private static void print(int[] s){
+		for(int i =0; i < s.length; i++){
+			System.out.println(s[i]);
+		}
+	}
+	
+	private static void randomize(int[] s, int max){
+		for(int i =0; i <s.length; i++){
+			int random = (int)(1 + Math.random()*max);
+			s[i] = random;
+		}
+	}
+	
+	private static void rollDice(int[] s, int numberOfDice){
+		for(int i =0; i< s.length; i++){
+			int dice = 0;
+			for(int j = 0; j <numberOfDice; j++){
+				dice = dice + (int)(1+ 6*Math.random());
+			}
+			s[i] = dice;
+		}
+	}
+	
+	private static void countResult(int[] intArray, int numberOfDice){
+		int[] counter = new int[numberOfDice*6];
+		for(int n : intArray){
+			counter[n-1] = counter[n-1] +1;
+		}
+		for(int i =numberOfDice-1; i<counter.length; i++){
+			System.out.println((i+1) + " was rolled " 
+					+ 100*counter[i]/intArray.length+ " percent of the time.");
+		}
+	}
+	
+	
+	
+	private void demonstratePassByValue(){
+		int x = 10;
+		x = increase(x);
+		System.out.println(x);
 		
 		
 		String[] someStrings = new String[1000];
 		standardPopulate(someStrings);
 		String s = someStrings[999];
 		makeSpecial(s);
+		someStrings[999] = getASpecialString();
 		print(someStrings);
-		
-		long endTime = System.currentTimeMillis();
-		System.out.println("The process took "+(endTime-currentTime)+" ms.");
 	}
 	
-	private static void increase(int i){
-		i++;
-		//same as i = i+1;
+	private static String getASpecialString() {
+		String s = "THIS STRING IS SPECIAL!";
+		return s;
+	}
+
+	private static int increase(int i){
+		return i++;
 	}
 	
 	private static void makeSpecial(String s) {
