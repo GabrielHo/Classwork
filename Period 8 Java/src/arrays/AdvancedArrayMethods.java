@@ -10,9 +10,9 @@ public class AdvancedArrayMethods {
 		methodA(someArray);
 	}
 	
-	private static void swap(String[] arr, int a, int b){
+	private static void swap(Object[] arr, int a, int b){
 		//make a placeholder and put the information in the placeholder
-		String placeholder = arr[b];
+		Object placeholder = arr[b];
 		arr[b] = arr[a];
 		arr[a] = placeholder;
 	}
@@ -31,5 +31,45 @@ public class AdvancedArrayMethods {
 			//print an "error" message
 			System.out.println("ERROR: tried to copy arrays of two different lengths."); 
 		}
+	}
+	
+	private static void shuffle(Object[] array){
+		for(int i =0; i < array.length; i++){
+			int random = (int)(Math.random()*6);
+			swap(array, i, random);
+			
+		}
+	}
+	
+	public static int longestSharedSequence(int[] array1, int[] array2){
+		int max = 0;
+	    int count = 0;
+	    for(int seqStart = 0; seqStart < array1.length; seqStart++){
+	    	int seqEnd = seqStart;
+	        int[] seq = getSequence(seqStart, seqEnd, array1);
+	        if(checkSequence(seq, array2)){
+	        	count ++;
+	        	if(count > max){
+	        		max = count;
+	        	}
+	        }
+	        //reset the count after every seq has been checked
+	        count = 0;
+	    }
+	    
+	    return max;
+	    
+	}
+	
+	//returns true if seq is found inside array2
+	private static boolean checkSequence(int[] seq, int[] array2) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	//returns a sub-array containing the elements in array1 from seqStart to seqEnd
+	private static int[] getSequence(int seqStart, int seqEnd, int[] array1) {
+		
+		return null;
 	}
 }
