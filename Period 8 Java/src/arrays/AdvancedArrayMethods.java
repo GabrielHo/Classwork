@@ -41,6 +41,26 @@ public class AdvancedArrayMethods {
 		}
 	}
 	
+	public static int longestConsecutiveSequence(int[] array1){
+        /**This method counts the longest consequtive sequence in an array.
+         * It does not matter where the sequence begins
+         * If there are no consecutive numbers, the method should return '1'
+         * 
+         * Examples:
+         * longestSequence({1,2,3,4,5,8,9}) returns '5', since the sequence '1,2,3,4,5' is 5 integers long 
+         * longestSequence({0,9,10,11,4,3,8,9}) returns '3', since '9,10,11' is 3 integers long
+         * longestSequence({0,9,8,11,4,3,7,9}) returns '1', since there are no consecutive integers
+         * */
+        int seqNumber = 0;
+        for(int i = 1; i < array1.length; i++){
+            if(array1[i-1] == array1[i]){
+                seqNumber++;
+            }
+            
+        }
+        return seqNumber;
+    }
+	
 	public static int longestSharedSequence(int[] array1, int[] array2){
 		int max = 0;
 	    int count = 0;
@@ -63,7 +83,20 @@ public class AdvancedArrayMethods {
 	
 	//returns true if seq is found inside array2
 	private static boolean checkSequence(int[] seq, int[] array2) {
-		// TODO Auto-generated method stub
+		//i checks every value in array 2
+		A: for(int i= 0; i <array2.length; i++){
+			//j checks every element in seq
+		 B:	for(int j = 0; j <seq.length; j++){
+				if(j+1 < array2.length && seq[j] != array2[j+1]){
+					//breaks out of innermost for loop unless particular for loop is specified (labels "A:")
+					break;
+				}
+				else if(j == seq.length-1){
+					return true;
+				}
+			}
+			
+		}
 		return false;
 	}
 
