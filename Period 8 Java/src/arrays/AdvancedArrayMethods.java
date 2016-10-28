@@ -5,9 +5,7 @@ public class AdvancedArrayMethods {
 	static int[] array;
 	
 	public static void main(String[] args){
-		array = new int[100];
-		int[] someArray = new int[50];
-		methodA(someArray);
+		listPrimes(120);
 	}
 	
 	private static void swap(Object[] arr, int a, int b){
@@ -104,5 +102,30 @@ public class AdvancedArrayMethods {
 	private static int[] getSequence(int seqStart, int seqEnd, int[] array1) {
 		
 		return null;
+	}
+	
+	private static void listPrimes(int limit){
+		int lastToCheck = (int)(Math.sqrt(limit));
+		boolean[] numbers = new boolean[limit+1];
+		for(int i = 0; i <limit+1; i++){
+			numbers[i] = true;
+		}
+		//0 and 1 are, by definition, not prime
+		numbers[0] = false;
+		numbers[1] = false;
+		//check all non-"crossed off" numbers (start with 2)
+		for(int prime = 2; prime <= lastToCheck; prime++){
+			if(numbers[prime]){
+				System.out.println("\n" + prime + "is prime." + " Crossing off:");
+				for(int i = (int)(Math.pow(prime, 2)); i <limit+1; i += prime){
+					System.out.print(i +", ");
+					numbers[i] = false;
+				}
+			}
+		}
+		System.out.println("\nThe primes are:");
+		for(int index = 0; index < numbers.length; index++){
+			if(numbers[index])System.out.print(index +", ");
+		}
 	}
 }
