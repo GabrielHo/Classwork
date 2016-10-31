@@ -1,4 +1,4 @@
-package CaveExplorer;
+package caveExplorer8;
 
 import java.util.Arrays;
 
