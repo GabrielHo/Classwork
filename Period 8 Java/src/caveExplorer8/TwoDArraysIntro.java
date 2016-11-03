@@ -1,16 +1,100 @@
 package caveExplorer8;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class TwoDArraysIntro {
 
+	public static Scanner in = new Scanner(System.in);
+	static String[][] arr2D;
+	static String[][] pic;
+	static int starti;
+	static int startj;
+	static int treasurei;
+	static int treasurej;
+	
 	public static void main(String[] args) {
+		arr2D = new String[5][5];
+		pic = new String[5][5];
+		for(int row = 0; row < arr2D.length; row++){
+			//populate with coordinates
+			for(int col = 0; col < arr2D[row].length; col++){
+				arr2D[row][col] = "("+row+", "+col+")";
+			}
+		}
 		
+		starti = 2;
+		startj = 2;
+		treasurei = 4;
+		treasurej = 3;
+		startExploring();
+	}
+	
+	private static void startExploring() {    
+		while(true){
+			printPic(pic);
+			System.out.println("You are in room " +arr2D[starti][startj]+ ".");
+			if(starti==treasurei && startj==treasurej){
+				break;
+			}
+			
+			System.out.println("What do you want to do?");
+			String input = in.nextLine();
+			int[] newCoordinates = interpretInput(input);
+			starti = newCoordinates[0];
+			startj = newCoordinates[1];
+		}
+		System.out.println("You found the treasure, You win the game!");
+	}
+
+	private static int[] interpretInput(String input) {
+		//verify input is valid
+		while(!isValid(input)){
+			System.out.println("Sorry. In this game, you can only use the WASD controls.");
+			System.out.println("Tell me again what you would like to do.");
+			input = in.nextLine();
+		}
+		int currenti = starti;
+		int currentj = startj;
+		input = input.toLowerCase();
+		if(input.equals("w")){
+			currenti--;
+		}
+		if(input.equals("s")){
+			currenti++;
+		}
+		if(input.equals("a")){
+			currentj--;
+		}
+		if(input.equals("d")){
+			currentj++;
+		}
+		int[] newCoordinates = {starti,startj};
+		if(currenti >= 0 && currenti < arr2D.length && currentj >=0 && currentj < arr2D[0].length){
+			newCoordinates[0] = currenti;
+			newCoordinates[1] = currentj;
+		}
+		else{
+			System.out.println("You have reached the edge of the known universe. You may go not further in that direction.");
+		}
+		return newCoordinates;
+	}
+
+	private static boolean isValid(String input) {
+		String[] validKeys = {"w", "a", "s", "d"};
+		for(String key : validKeys){
+			if(input.toLowerCase().equals(key)){
+				return true;
+			}
+		}
+		return false;
+	}
+
+	private static void minesweeper(){
 		boolean[][] mines = new boolean[6][6]; //filled with zero because primitive type
 		plantMines(mines);
 		String[][] field = createField(mines);
 		printPic(field);
-		
 	}
 	
 	private static String[][] createField(boolean[][] mines) {
@@ -30,15 +114,45 @@ public class TwoDArraysIntro {
 	}
 
 	private static String countNearby(boolean[][] mines, int row, int col) {
-		for(int r = row-1; r <= row +1; r++){
-			for(int c = col-1; c <= col +1; c++){
-				//check that this element exists
-				if(row >= 0 && r < mines.length && c >=0 && c < mines[0].length){
-					
-				}
-			}
+//		for(int r = row-1; r <= row +1; r++){
+//			for(int c = col-1; c <= col +1; c++){
+//				//check that this element exists
+//				if(row >= 0 && r < mines.length && c >=0 && c < mines[0].length){
+//					
+//				}
+//			}
+//		}
+//		return null;
+		
+		//this method only considers actual elements
+//		int count =0;
+//		for(int r = 0; r < mines.length; r++){
+//			for(int c = 0; c < mines[r].length; c++){
+//				if(Math.abs(r-row)+Math.abs(c-col)==1 && mines[r][c]){
+//					count++;
+//					return ""+count;
+//				}
+//			}
+//		}
+		
+		//this methods allows you to be the most specific 
+		//for example, you only want North and East
+		int count = 0;
+		count += isValidAndTrue(mines,row-1,col);
+		count += isValidAndTrue(mines,row+1,col);
+		count += isValidAndTrue(mines,row,col-1);
+		count += isValidAndTrue(mines,row,col+1);
+		return "" +count;
+	}
+
+	private static int isValidAndTrue(boolean[][] mines, int i, int j) {
+		if(i >= 0 && i < mines.length && j >= 0 && j < mines[0].length && mines[i][j]){
+			return 1;
 		}
-		return null;
+		else{
+			return 0;
+		}
+		
 	}
 
 	private static void plantMines(boolean[][] mines) {
@@ -110,12 +224,37 @@ public class TwoDArraysIntro {
 			pic[row][pic[0].length-1] = "|";
 		}
 		
-		for(String[] row : pic){
+//		for(String[] row : pic){
+//			for(String col :row){
+//				System.out.print(col);
+//			}
+//			System.out.println();
+//		}
+	}
+	
+	public static void printGrid(){
+		String[][] grid = new String[5][5];
+		for(int row = 0; row < grid.length; row++){
+			for(int col = 0; col < grid[row].length; col++){
+				grid[row][col] = "";
+			}
+		}
+		for(int col = 0; col < grid[0].length; col++){
+			grid[0][col] = "__";
+			grid[grid.length-1][col] = "__";
+		}
+		
+		for(int row = 1; row < grid.length; row++){
+			grid[row][0] = " |";
+			grid[row][grid[0].length-1] = " |";
+		}
+		for(String[] row : grid){
 			for(String col :row){
 				System.out.print(col);
 			}
 			System.out.println();
 		}
+		
 	}
 	
 	public static void intro(){
