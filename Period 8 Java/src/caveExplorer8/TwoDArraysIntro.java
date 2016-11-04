@@ -14,20 +14,36 @@ public class TwoDArraysIntro {
 	static int treasurej;
 	
 	public static void main(String[] args) {
-		arr2D = new String[5][5];
-		pic = new String[5][5];
-		for(int row = 0; row < arr2D.length; row++){
-			//populate with coordinates
-			for(int col = 0; col < arr2D[row].length; col++){
-				arr2D[row][col] = "("+row+", "+col+")";
+//		arr2D = new String[5][5];
+//		pic = new String[5][5];
+//		for(int row = 0; row < arr2D.length; row++){
+//			//populate with coordinates
+//			for(int col = 0; col < arr2D[row].length; col++){
+//				arr2D[row][col] = "("+row+", "+col+")";
+//			}
+//		}
+//		
+//		starti = 2;
+//		
+//		
+//		startj = 2;
+//		treasurei = 4;
+//		treasurej = 3;
+//		startExploring();
+		String[][] newPic = new String[5][13]; 
+		for(int row = 0;row<newPic.length;row++){
+			for(int col = 0;col<newPic[0].length;col++){
+				if(row%4==0){
+					newPic[row][col] = "_";
+				}
+				else if(col%3==0){
+					newPic[row][col] = "|";
+				}else{
+					newPic[row][col] = " ";
+				}
 			}
 		}
-		
-		starti = 2;
-		startj = 2;
-		treasurei = 4;
-		treasurej = 3;
-		startExploring();
+		printPic(newPic);
 	}
 	
 	private static void startExploring() {    
