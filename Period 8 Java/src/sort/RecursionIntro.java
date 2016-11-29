@@ -3,6 +3,7 @@ package sort;
 public class RecursionIntro {
 
 	public static void main(String[] args) {
+		/**
 		System.out.println("Using a for loop");
 		for(int i = 0; i < 5; i++){
 			System.out.println("hello World"+" x"+i);
@@ -16,7 +17,9 @@ public class RecursionIntro {
 				value++;
 			}
 		});
-
+		**/
+		hanoiSolution(3,"A","B","C");
+		
 	}
 	
 	private static int factorial(int x){
@@ -37,6 +40,18 @@ public class RecursionIntro {
 		**/
 		
 	}
+	
+	public static void hanoiSolution(int numberOfDiscs, String startPeg, String midPeg, String endPeg){
+		if(numberOfDiscs <= 1){
+			System.out.println("Move " +startPeg+" to "+endPeg);
+		}
+		else{
+			hanoiSolution(numberOfDiscs-1, startPeg, endPeg, midPeg);
+			hanoiSolution(1, startPeg, midPeg, endPeg);
+			hanoiSolution(numberOfDiscs-1, midPeg, startPeg, endPeg);
+		}
+	}
+	
 	private static void forLoop(int i, Action action) {
 		if(i <=0){
 			//base case
