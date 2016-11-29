@@ -5,9 +5,13 @@ private int level;
 private int hp;
 private String name;
 private boolean poisoned;
-	
-	public static void main(String[] args){
-		
+	//yes
+
+	public Pokemon(String name, int level){
+		this.name = name;
+		this.level = level;
+		hp = 100;
+		poisoned = false;
 	}
 	
 	public void attack(Pokemon target, Attack attack){
@@ -18,13 +22,6 @@ private boolean poisoned;
 		else{
 			System.out.println("The attack missed");
 		}
-	}
-	
-	public void setHPAndPoison(String name, int level){
-		this.name = name;
-		this.level = level;
-		hp = 100;
-		poisoned = false;
 	}
 	
 	public void iChooseYou(){

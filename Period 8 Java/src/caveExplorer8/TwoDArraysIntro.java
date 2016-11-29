@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class TwoDArraysIntro {
-
+/**
 	public static Scanner in = new Scanner(System.in);
 	static String[][] arr2D;
 	static String[][] pic;
@@ -14,22 +14,6 @@ public class TwoDArraysIntro {
 	static int treasurej;
 	
 	public static void main(String[] args) {
-//		arr2D = new String[5][5];
-//		pic = new String[5][5];
-//		for(int row = 0; row < arr2D.length; row++){
-//			//populate with coordinates
-//			for(int col = 0; col < arr2D[row].length; col++){
-//				arr2D[row][col] = "("+row+", "+col+")";
-//			}
-//		}
-//		
-//		starti = 2;
-//		
-//		
-//		startj = 2;
-//		treasurei = 4;
-//		treasurej = 3;
-//		startExploring();
 		String[][] newPic = new String[5][13]; 
 		for(int row = 0;row<newPic.length;row++){
 			for(int col = 0;col<newPic[0].length;col++){
@@ -41,9 +25,37 @@ public class TwoDArraysIntro {
 				}else{
 					newPic[row][col] = " ";
 				}
-			}
-		}
+
+		arr2D = new String[5][5];
+		pic = new String[5][5];
+		for(int row = 0; row < arr2D.length; row++){
+			for(int col = 0; col < arr2D[row].length; col++){
+				arr2D[row][col] = "("+row+", "+col+")";
 		printPic(newPic);
+
+//		for(int col = 0; col < pic[0].length; col++){
+//			pic[0][col] = "__";
+//			pic[pic.length-1][col] = "__";
+//		}
+		
+		for(int row = 1; row < pic.length; row++){
+			pic[row][0] = " |";
+			pic[row][pic[0].length-1] = " |";
+		}
+		
+		for(String[] row : pic){
+			for(String col :row){
+				System.out.print(col);
+			}
+			System.out.println();
+		}
+		
+		starti = 2;
+		startj = 2;
+		treasurei = 4;
+		treasurej = 3;
+		startExploring();
+			}
 	}
 	
 	private static void startExploring() {    
@@ -294,5 +306,5 @@ public class TwoDArraysIntro {
 			System.out.println(Arrays.toString(row));
 		}
 	}
-
+**/
 }
