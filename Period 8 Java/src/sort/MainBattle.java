@@ -28,7 +28,7 @@ public class MainBattle {
 		bulbasaur.lapse();
 		printScore(squirtle, bulbasaur);
 	}
-	
+	//yes
 	private static void printScore(Pokemon p1, Pokemon p2){
 		System.out.println(p1.getName()+ ", HP = "+p1.getHP());
 		System.out.println(p2.getName()+ ", HP = "+p2.getHP());

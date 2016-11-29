@@ -3,8 +3,30 @@ package sort;
 public class RecursionIntro {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		System.out.println("Using a for loop");
+		for(int i = 0; i < 5; i++){
+			System.out.println("hello World");
+		}
+		System.out.println("Without using a for loop");
+		forLoop(5, new Action() {
+			
+			public void act() {
+				System.out.println("Hello world.");
+				
+			}
+		});
 
+	}
+
+	private static void forLoop(int i, Action action) {
+		if(i <=0){
+			return;
+		}
+		else{
+			action.act();
+			forLoop(i-1, action);
+		}
+		
 	}
 
 }
