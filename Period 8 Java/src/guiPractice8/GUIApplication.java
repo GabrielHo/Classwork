@@ -3,15 +3,15 @@ package guiPractice8;
 import java.awt.Graphics;
 import javax.swing.JFrame;
 
-public class GUIApplication extends JFrame{
+public abstract class GUIApplication extends JFrame{
 
 	private Screen currentScreen;
 	
 	//main method for practice only
-	public static void main(String[] args) {
+	//public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		new GUIApplication();
-	}
+		//new GUIApplication();
+	//}
 
 	public GUIApplication(){
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -26,10 +26,11 @@ public class GUIApplication extends JFrame{
 		
 	}
 
-	protected void initScreen() {
-		Screen startScreen = new Screen(getWidth(), getHeight());
-		currentScreen = startScreen;
-		
+	//method for creating and setting the starting screen
+	protected abstract void initScreen();
+	
+	public void setScreen(Screen screen){
+		currentScreen = screen;
 	}
 	
 	public void paint(Graphics g){
