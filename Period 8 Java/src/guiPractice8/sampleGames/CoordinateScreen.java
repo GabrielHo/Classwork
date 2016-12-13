@@ -1,5 +1,7 @@
 package guiPractice8.sampleGames;
 
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseMotionListener;
 import java.util.ArrayList;
 
 import guiPractice8.Screen;
@@ -7,7 +9,7 @@ import guiPractice8.component.TextArea;
 import guiPractice8.component.TextLabel;
 import guiPractice8.component.Visible;
 
-public class CoordinateScreen extends Screen {
+public class CoordinateScreen extends Screen implements MouseMotionListener {
 
 	private TextLabel label;
 	private TextArea paragraph;
@@ -16,7 +18,6 @@ public class CoordinateScreen extends Screen {
 		super(width, height);
 	}
 
-	@Override
 	public void initObjects(ArrayList<Visible> viewObjects) {
 		label = new TextLabel(40,45,760,40,"Sample Text");
 		paragraph = new TextArea(40,85,760,500,
@@ -26,6 +27,18 @@ public class CoordinateScreen extends Screen {
 		viewObjects.add(label);
 		viewObjects.add(paragraph);
 		
+	}
+
+	public void mouseDragged(MouseEvent arg0) {
+		
+	}
+
+	public void mouseMoved(MouseEvent m) {
+		label.setText("Mouse at " + m.getX()+ ", "+m.getY());
+	}
+	
+	public MouseMotionListener getMouseMotionListener(){
+		return this;
 	}
 
 }

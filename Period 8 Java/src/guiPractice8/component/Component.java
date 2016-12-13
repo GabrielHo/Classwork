@@ -9,7 +9,7 @@ public abstract class Component implements Visible {
 	private int y;
 	private int w;
 	private int h;
-	private BufferedImage image;
+	protected BufferedImage image;
 	
 	public Component(int x, int y, int width, int height){
 		this.x = x;
@@ -18,6 +18,12 @@ public abstract class Component implements Visible {
 		this.h = height;
 		image = new BufferedImage(w, h, BufferedImage.TYPE_INT_ARGB);
 		update(image.createGraphics());
+	}
+	
+	public Graphics2D clear(){
+		//resets the picture
+		image = new BufferedImage(w, h, BufferedImage.TYPE_INT_ARGB);
+		return image.createGraphics();
 	}
 
 	public abstract void update(Graphics2D g);

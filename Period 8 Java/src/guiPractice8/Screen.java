@@ -6,6 +6,8 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
@@ -55,5 +57,13 @@ public abstract class Screen {
 	
 	public BufferedImage getImage(){
 		return image;
+	}
+
+	public MouseListener getMouseListener(){
+		return null;
+	}
+
+	public MouseMotionListener getMouseMotionListener() {
+		return null;
 	}
 }
