@@ -19,11 +19,11 @@ public class CoordinateScreen extends Screen implements MouseMotionListener {
 	}
 
 	public void initObjects(ArrayList<Visible> viewObjects) {
-		label = new TextLabel(40,45,760,40,"Sample Text");
+		label = new TextLabel(40,45,760,40,"Sample Text", null, null);
 		paragraph = new TextArea(40,85,760,500,
 				"This is a whole paragraph. Notice how "
 				+ "as the paragraph gets to the edge"
-				+ " of the page, a new line is created.");
+				+ " of the page, a new line is created.", null, null);
 		viewObjects.add(label);
 		viewObjects.add(paragraph);
 		
