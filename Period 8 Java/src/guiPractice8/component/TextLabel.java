@@ -14,13 +14,11 @@ public class TextLabel extends Component {
 	private Color color;
 	private Action action;
 
-	public TextLabel(int x, int y, int w, int h, String text, Color color, Action action) {
+	public TextLabel(int x, int y, int w, int h, String text, Color color2, Action action2) {
 		super(x, y, w, h);
 		this.text = text;
 		font = "Helvetica";
 		size = 20;
-		this.color = color;
-		this.action = action;
 		update();
 	}
 
@@ -38,11 +36,6 @@ public class TextLabel extends Component {
 		this.font = font;
 		update();
 	}
-	
-	public void setColor(Color color){
-		this.color = color;
-		update();
-	}
 
 	public String getText() {
 		return text;
@@ -56,10 +49,6 @@ public class TextLabel extends Component {
 		return size;
 	}
 	
-	public Color getColor(){
-		return color;
-	}
-
 	public void update(Graphics2D g) {
 		//this is where you draw stuff.
 		g = clear();//clears image and gets new graphics
