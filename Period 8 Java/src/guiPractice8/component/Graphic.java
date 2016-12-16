@@ -12,16 +12,22 @@ public class Graphic implements Visible {
 	public Graphic(int x, int y, String imageLocation){
 		this.x = x;
 		this.y = y;
-		loadedImages - false;
+		loadedImages = false;
+		loadImages(imageLocation, 0.0);
 	}
 	
+	private void loadImages(String imageLocation, double d) {
+		// TODO Auto-generated method stub
+		
+	}
+
 	@Override
 	public BufferedImage getImage() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
+	
 	public int getX() {
 		// TODO Auto-generated method stub
 		return 0;
