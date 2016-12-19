@@ -55,6 +55,22 @@ public abstract class Screen {
 //		}
 	}
 	
+	public void remove(Visible v){
+		/**ArrayList notes
+		*while this method is very simple, do not
+		*underestimate the trickiness of removing items in an ArrayList
+		*It causes indices to change
+		*Example: Suppose you have an ArrayList<Integer> and you want to remove
+		*all values greater than 5
+		*THIS IS BAD: 
+		*
+		*for(int i = 0; i < list.size(); i++){
+		*	if(list.get(i) > 5) list.remove(i);
+		*}
+		*
+		**/
+	}
+	
 	public BufferedImage getImage(){
 		return image;
 	}
