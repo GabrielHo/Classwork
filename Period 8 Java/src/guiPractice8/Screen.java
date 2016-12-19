@@ -62,13 +62,48 @@ public abstract class Screen {
 		*It causes indices to change
 		*Example: Suppose you have an ArrayList<Integer> and you want to remove
 		*all values greater than 5
+		*
 		*THIS IS BAD: 
 		*
 		*for(int i = 0; i < list.size(); i++){
 		*	if(list.get(i) > 5) list.remove(i);
 		*}
 		*
+		*suppose you haVe (4,5,6,7)
+		*the first integer to be removed is 6, at index 2 since it gets removed, 7 moves from index 3 to 2.
+		*your list is now (4,5,7)
+		*after you increment i, i becomes 3.
+		*This is our of bounds so 7 never gets removed
+		*Instead, when an objects is removed, decrease i to compensate for change in size.
+		*
+		*CORRECT:
+		*
+		*for(int i = 0; i <list.size(); i++){
+		*	if(list.get(i) > 5{
+		*		list.remove(i);
+		*		i--;
+		*	}
+		*}
 		**/
+		viewObjects.remove(v);
+		//this removes the object that has the same identity as v, not as an object that is equal to v
+	}
+	
+	public void moveToFront(Visible v){
+		if(viewObjects.contains(v)){
+			viewObjects.remove(v);
+			viewObjects.add(v);
+		}
+	}
+	
+	public void moveToBack(Visible v){
+		if(viewObjects.contains(v)){
+			viewObjects.remove(v);
+			viewObjects.add(0,v);
+		}
+		//moves all objects with index greater >=n forward by 1, increases size by 1,
+		//adds objects to index n
+		
 	}
 	
 	public BufferedImage getImage(){

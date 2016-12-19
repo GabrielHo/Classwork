@@ -12,11 +12,25 @@ public class Graphic implements Visible {
 	private BufferedImage image;
 	private boolean loadedImages;
 
+	public Graphic(int x, int y, double scale,String imageLocation){
+		this.x = x;
+		this.y = y;
+		loadedImages = false;
+		loadImages(imageLocation, scale);
+	}
+	
 	public Graphic(int x, int y, String imageLocation){
 		this.x = x;
 		this.y = y;
 		loadedImages = false;
 		loadImages(imageLocation, 0,0);
+	}
+	
+	public Graphic(int x, int y, int w, int h, String imageLocation){
+		this.x = x;
+		this.y = y;
+		loadedImages = false;
+		loadImages(imageLocation, w,h);
 	}
 	
 	private void loadImages(String imageLocation, int w, int h) {
@@ -33,6 +47,14 @@ public class Graphic implements Visible {
 			
 			else{
 				//use custom size
+				image = new BufferedImage(w,h,BufferedImage.TYPE_INT_ARGB);
+				Graphics2D g = image.createGraphics();
+				//select coordinates of top left rectangle within image
+				//then select width and height to display graphic 
+				//THEN of the icon you want to display 
+				//select x, y coordinates and width, height
+				//this can split an image into parts
+				g.drawImage(icon.getImage(), 0, 0, w,h,0,0,icon.getIconWidth(), icon.getIconHeight(), null);
 			}
 			loadedImages = true;
 			
@@ -43,8 +65,19 @@ public class Graphic implements Visible {
 		
 	}
 
-	private void loadImages(String imageLocation, double d) {
-		// TODO Auto-generated method stub
+	private void loadImages(String imageLocation, double scale) {
+		try{
+			ImageIcon icon = new ImageIcon(imageLocation);
+			int newWidth = (int)(icon.getIconWidth() * scale);
+			int newHeight = (int)(icon.getIconHeight() * scale);
+			image = new BufferedImage(newWidth, newHeight, BufferedImage.TYPE_INT_ARGB);
+			Graphics2D g = image.createGraphics();
+			g.drawImage(icon.getImage(),0,0,newWidth,newHeight,0,0,icon.getIconWidth(),icon.getIconHeight(), null);
+			
+			loadedImages = true;
+		}catch(Exception e){
+			e.printStackTrace();
+		}
 		
 	}
 
