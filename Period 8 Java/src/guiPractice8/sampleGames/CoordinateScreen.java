@@ -55,14 +55,19 @@ public class CoordinateScreen extends Screen implements MouseMotionListener, Mou
 		label.setText("Mouse at " + m.getX()+ ", "+m.getY());
 	}
 	
+	public MouseListener getMouseListener(){
+		return this;
+	}
+	
 	public MouseMotionListener getMouseMotionListener(){
 		return this;
 	}
 
 	@Override
 	public void mouseClicked(MouseEvent m) {
-		
-		
+		if(button.isHovered(m.getX(), m.getY())){
+			button.act();
+			}
 	}
 
 	@Override
