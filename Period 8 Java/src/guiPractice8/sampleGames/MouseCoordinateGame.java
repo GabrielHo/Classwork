@@ -5,6 +5,7 @@ import guiPractice8.GUIApplication;
 public class MouseCoordinateGame extends GUIApplication {
 
 	public static MouseCoordinateGame game;
+	public static MyScreen myScreen;
 
 	public static void main(String[] args){
 
@@ -14,7 +15,7 @@ public class MouseCoordinateGame extends GUIApplication {
 	}
 
 	protected void initScreen() {
-			// TODO Auto-generated method stub
+		MyScreen myScreen;
 			
 	}
 }

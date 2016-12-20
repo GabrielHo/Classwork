@@ -23,7 +23,7 @@ public class MyScreen extends Screen implements MouseMotionListener, MouseListen
 
 	@Override
 	public void initObjects(ArrayList<Visible> viewObjects) {
-		pinkguy = new Graphic(200,200,.25,"resources/sampleImages/pinkguy.jpeg");
+		pinkguy = new Graphic(200,200,.25,"resources/sampleImages/hey thats pretty good.jpeg");
 		back = new Button(50,50,100,60,"Back", Color.GRAY, new Action() {
 			
 			public void act() {
@@ -34,43 +34,45 @@ public class MyScreen extends Screen implements MouseMotionListener, MouseListen
 		viewObjects.add(back);
 	}
 
-	public void mouseDragged(MouseEvent arg0) {
+	@Override
+	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
 		
 	}
 
-	public void mouseMoved(MouseEvent arg0) {
-		
-	}
-
-	public void mouseClicked(MouseEvent e) {
-		if(back.isHovered(e.getX(), e.getY())){
-			back.act();
-		}
-	}
-
+	@Override
 	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
 		
 	}
 
+	@Override
 	public void mouseExited(MouseEvent e) {
 		// TODO Auto-generated method stub
 		
 	}
 
+	@Override
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
 		
 	}
 
+	@Override
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
 		
 	}
 
-	public MouseListener getMouseListener(){
-		return this;
+	@Override
+	public void mouseDragged(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
 	}
-	
+
+	@Override
+	public void mouseMoved(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
 }
