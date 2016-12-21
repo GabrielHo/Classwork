@@ -20,7 +20,7 @@ public class ClickGraphicScreen extends Screen implements MouseListener{
 	}
 	
 	public void initObjects(ArrayList<Visible> viewObjects) {
-		pinkguy = new ClickableGraphic(50, 50, .5, "resources/sampleImages/pinkguy.jpeg");
+		pinkguy = new ClickableGraphic(50, 50, .5, "resources/sampleImages/pinkguy.jpg");
 		pinkguy.setAction(new Action(){
 				public void act() {
 					pinkguy.setX(pinkguy.getX() + 50);
