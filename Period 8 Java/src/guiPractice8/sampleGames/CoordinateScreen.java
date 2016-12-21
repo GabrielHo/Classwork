@@ -26,16 +26,15 @@ public class CoordinateScreen extends Screen implements MouseMotionListener, Mou
 	}
 
 	public void initObjects(ArrayList<Visible> viewObjects) {
-		label = new TextLabel(40,45,760,40,"Sample Text", null, null);
+		label = new TextLabel(40,45,760,40,"Sample Text");
 		paragraph = new TextArea(40,85,760,500,
 				"This is a whole paragraph. Notice how "
 				+ "as the paragraph gets to the edge"
-				+ " of the page, a new line is created.", null, null);
+				+ " of the page, a new line is created.");
 		button = new Button(40, 200, 80, 40, "Button", new Color(100,100,250), new Action(){
 			@Override
 			public void act() {
-				// TODO Auto-generated method stub
-				
+				MouseFollower.game.setScreen(MouseFollower.moveScreen);
 			}
 		});
 		

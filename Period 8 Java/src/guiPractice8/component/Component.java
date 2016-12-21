@@ -9,7 +9,7 @@ public abstract class Component implements Visible {
 	private int y;
 	private int w;
 	private int h;
-	protected BufferedImage image;
+	private BufferedImage image;
 	
 	public Component(int x, int y, int width, int height){
 		this.x = x;

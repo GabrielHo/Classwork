@@ -36,7 +36,9 @@ public class MyScreen extends Screen implements MouseMotionListener, MouseListen
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		// TODO Auto-generated method stub
+		if(back.isHovered(e.getX(), e.getY())){
+			back.act();
+		}
 		
 	}
 
@@ -69,7 +71,11 @@ public class MyScreen extends Screen implements MouseMotionListener, MouseListen
 		// TODO Auto-generated method stub
 		
 	}
-
+	
+	public MouseListener getMouseListener(){
+		return this;
+	}
+	
 	@Override
 	public void mouseMoved(MouseEvent e) {
 		// TODO Auto-generated method stub

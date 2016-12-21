@@ -1,7 +1,6 @@
 package guiPractice8.sampleGames;
 
 import java.util.ArrayList;
-import guiPractice8.Screen;
 
 import guiPractice8.Screen;
 import guiPractice8.component.Visible;

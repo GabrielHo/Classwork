@@ -37,6 +37,8 @@ public abstract class Screen {
 		//where we drawing stuff
 		Graphics2D g = image.createGraphics();
 		g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+		g.setColor(Color.white);
+		g.fillRect(0, 0, image.getWidth(),image.getHeight());
 		g.setColor(Color.black);
 		//drawing all visible stuff
 		for(Visible v : viewObjects){
