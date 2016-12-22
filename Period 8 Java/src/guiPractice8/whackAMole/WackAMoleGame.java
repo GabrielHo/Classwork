@@ -10,13 +10,15 @@ public class WackAMoleGame extends GUIApplication {
 
 	@Override
 	protected void initScreen() {
-		// TODO Auto-generated method stub
+		WackAMoleScreen wams = new WackAMoleScreen(getWidth(), getHeight());
+		setScreen(wams);
 
 	}
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		WackAMoleGame game = new WackAMoleGame();
+		Thread app = new Thread(game);
+		app.start();
 	}
 
 }
