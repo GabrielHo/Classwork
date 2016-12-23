@@ -4,6 +4,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
 
+import guiPractice8.ClickableScreen;
 import guiPractice8.Screen;
 import guiPractice8.component.Visible;
 

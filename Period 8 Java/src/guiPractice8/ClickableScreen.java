@@ -1,10 +1,9 @@
-package guiPractice8.sampleGames;
+package guiPractice8;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
 
-import guiPractice8.Screen;
 import guiPractice8.component.Clickable;
 import guiPractice8.component.Visible;
 
@@ -12,11 +11,22 @@ public abstract class ClickableScreen extends Screen implements MouseListener {
 
 	private ArrayList<Clickable> clickables;
 	
-	public abstract void initAllObjects(ArrayList<Visible> visibles);
-	
 	public ClickableScreen(int width, int height) {
 		super(width, height);
 		// TODO Auto-generated constructor stub
+	}
+
+	public abstract void initAllObjects(ArrayList<Visible> visibles);
+	
+	@Override
+	public void initObjects(ArrayList<Visible> viewObjects) {
+		initAllObjects(viewObjects);
+		clickables = new ArrayList<Clickable>();
+		for(int i = 0; i <viewObjects.size();i++){
+			if(viewObjects.get(i) instanceof Clickable){
+				clickables.add((Clickable) viewObjects.get(i));
+			}
+		}
 	}
 
 	@Override
@@ -57,14 +67,6 @@ public abstract class ClickableScreen extends Screen implements MouseListener {
 		return this;
 	}
 	
-	@Override
-	public void initObjects(ArrayList<Visible> viewObjects) {
-		initAllObjects(viewObjects);
-		clickables = new ArrayList<Clickable>();
-		for (int i = 0; i < viewObjects.size(); i ++){
-			if (viewObjects.get(i) instanceof Clickable)clickables.add((Clickable) viewObjects.get(i));
-		}
-	}
 	
 
 }
