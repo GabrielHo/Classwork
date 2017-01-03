@@ -65,7 +65,7 @@ public class SimonScreenGabriel extends ClickableScreen implements Runnable {
 	public void addButtons() {
 		Button b;
 		//code that randomly selects a ButtonInterfaceX
-		return getMove(b);
+		return getMove(b); 
 
 	}
 
