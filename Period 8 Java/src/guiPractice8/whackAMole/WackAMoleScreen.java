@@ -118,8 +118,8 @@ public class WackAMoleScreen extends ClickableScreen implements Runnable{
 
 	private void changeText(String s){
 		try{
+				label.setText(s);
 			Thread.sleep(1000);
-			label.setText(s);
 		}catch(InterruptedException e){
 			e.printStackTrace();
 		}
