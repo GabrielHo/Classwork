@@ -5,5 +5,7 @@ import guiPractice8.component.Clickable;
 
 public interface ButtonInterfaceGabriel extends Clickable {
 	
-	void setAction(Action action); 
+	void setAction(Action action);
+
+	void highlight(); 
 }

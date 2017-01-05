@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.util.ArrayList;
 
 import guiPractice8.ClickableScreen;
+import guiPractice8.component.Action;
 import guiPractice8.component.Button;
 import guiPractice8.component.TextLabel;
 import guiPractice8.component.Visible;
@@ -32,8 +33,45 @@ public class SimonScreenGabriel extends ClickableScreen implements Runnable {
 
 	@Override
 	public void run() {
-		// TODO Auto-generated method stub
+		label.setText("");
+	    nextRound();
+	}
 
+	public void nextRound() {
+		acceptingInput = false;
+		roundNumber++;
+		moves.add(randomMove());
+		progress.setRound(roundNumber);
+		progress.setSequenceSize(moves.size());
+		changeText("Simon's turn.");
+		label.setText("");
+		playSequence();
+		changeText("Your turn.");
+		acceptingInput = true;
+		sequenceIndex =0;
+		
+	}
+
+	private void playSequence() {
+		ButtonInterfaceGabriel b =null;
+		for(MoveInterfaceGabriel sequence: moves){
+			if(b!=null){
+				b.dim();
+				b=sequence.getButton();
+				b.highlight();
+				int sleepTime = (int)(long)(2000*(2.0/roundNumber+2));
+				try {
+					Thread.sleep(sleepTime);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		b.dim();
+	}
+
+	private void changeText(String string) {
+		label.setText(string);
 	}
 
 	@Override
@@ -73,6 +111,39 @@ public class SimonScreenGabriel extends ClickableScreen implements Runnable {
 			button[i] = setColor(colorArray[i]);//need partner to finish
 			button[i] = setX(250);//need partner to finish
 			button[i] = setY(500);//need partner to finish
+			final ButtonInterfaceGabriel b = getButton();
+			b.setAction(new Action(){
+				public void act(){
+					if(acceptingInput){
+						Thread blink = new Thread(new Runnable(){
+							
+							public void run(){
+								b.highlight();
+								try{
+									Thread.sleep(800);
+								} catch (InterruptedException e){
+									e.printStackTrace();
+								}
+								b.dim();//stops the button from shining
+							}
+							
+						});
+						
+						if(acceptingInput && moves.get(sequenceIndex).getButton() == b){
+							sequenceIndex++;
+						}
+						else if(acceptingInput){
+							progress.gameOver();
+							return;
+						}
+						if(sequenceIndex == moves.size()){
+							Thread nextRound = new Thread(SimonScreenGabriel.this);
+							nextRound.start();
+						}
+					}
+				}
+			});
+			viewObjects.add(b);
 		}
 	}
 		
