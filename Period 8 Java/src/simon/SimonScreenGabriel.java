@@ -1,5 +1,6 @@
 package simon;
 
+import java.awt.Color;
 import java.util.ArrayList;
 
 import guiPractice8.ClickableScreen;
@@ -51,8 +52,9 @@ public class SimonScreenGabriel extends ClickableScreen implements Runnable {
 	}
 
 	private MoveInterfaceGabriel randomMove() {
-		// TODO Auto-generated method stub
-		return null;
+		ButtonInterfaceGabriel b;
+		//code that randomly selects a ButtonInterfaceX
+		return getMove(b);//partner codes this part
 	}
 
 	private ProgressInterfaceGabriel getProgress() {
@@ -63,10 +65,16 @@ public class SimonScreenGabriel extends ClickableScreen implements Runnable {
 	}
 
 	public void addButtons() {
-		Button b;
-		//code that randomly selects a ButtonInterfaceX
-		return getMove(b); 
-
+		int numberOfButtons = 6;
+		Color[] colorArray = {Color.red, Color.blue, new Color(240,160,70), new Color(20,255,140), Color.yellow, new Color(180,90,210)};
+		button = new ButtonInterfaceGabriel[numberOfButtons];
+		for(int i =0; i <numberOfButtons;i++){
+			button[i] = getAButton();//need partner to finish
+			button[i] = setColor(colorArray[i]);//need partner to finish
+			button[i] = setX(250);//need partner to finish
+			button[i] = setY(500);//need partner to finish
+		}
 	}
+		
 
 }

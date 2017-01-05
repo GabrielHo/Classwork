@@ -48,7 +48,7 @@ public class MovingComponent extends Component implements Runnable {
 			vy*=-1;
 		}
 		if(getY()<0){
-			setY(300);
+			setY(0);
 			vy*=1;
 		}
 	}
