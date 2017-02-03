@@ -63,11 +63,11 @@ public class CoordinateScreen extends Screen implements MouseMotionListener, Mou
 	private void addAnimation(ArrayList<Visible> viewObjects) {
 		AnimatedComponent a = new AnimatedComponent(40,50,150,150);
 		try{
-			int numberInRow = 12;
-			int rows =5;
-			int w = 75;
-			int h=60;
-			ImageIcon icon = new ImageIcon("resources/sampleImages/wat.jpg");
+			int numberInRow = 2;
+			int rows =4;
+			int w = 350;
+			int h=275;
+			ImageIcon icon = new ImageIcon("resources/sampleImages/cat.png");
 			//create a for loop that will take a sub-image from the sprite grid
 			for(int i = 0; i<numberInRow*rows;i++){
 				//declare the "cropped image"
@@ -77,8 +77,8 @@ public class CoordinateScreen extends Screen implements MouseMotionListener, Mou
 				int x1 = leftMargin + w*(i%numberInRow);
 				int y1 = topMargin + h*(i/numberInRow);
 				Graphics2D g = cropped.createGraphics();
-				g.drawImage(icon.getImage(),0,0,w,h,x1,y1,x1+w,y1+h,null);
-				a.addFrame(cropped, 200);
+				g.drawImage(icon.getImage(),50,50,w,h,x1,y1,x1+w,y1+h,null);
+				a.addFrame(cropped, 150);
 			}
 		}catch(Exception e){
 			e.printStackTrace();
