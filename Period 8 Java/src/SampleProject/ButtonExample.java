@@ -2,6 +2,7 @@ package SampleProject;
 
 import java.awt.Color;
 
+import guiPractice8.component.Action;
 import guiPractice8.component.Button;
 
 public class ButtonExample extends Button {
@@ -11,7 +12,7 @@ public class ButtonExample extends Button {
 	private static final int _BUTTON_HEIGHT = 40;
 
 	public ButtonExample(Thing target) {
-		super(target.getX(), target.getY(), w, h, text, color, action);
+		super(target.getX(), target.getY(), w, h, text, color, new Action());
 		// TODO Auto-generated constructor stub
 			public void act(){
 				target.feed();

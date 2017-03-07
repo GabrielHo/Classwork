@@ -1,7 +1,7 @@
 package TestReviews;
 
 public class Test2Review {
-	
+	//NUMBER 41 FOR EXAM STUFF
 	private static boolean[][] grid;
 	
 	public static void main(String[] args){
