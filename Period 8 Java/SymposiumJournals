@@ -9,4 +9,14 @@ May 5, 2017
 			  so we'll be implementing voice chat and other features as well. 
 		  Victor gave us a series of videos to watch that directly involve the project that we're going to be doing.
 		  I'll be watching these videos over the weekend and we will discuss as a group what to do when we come back on Monday.
+		  We are no longer using things like wampserver and php, and etc. We'll be using strictly Java.
 		  My goal for Monday is to be ready and know exactly what we need and what to do for the project. 
+		  
+May 8, 2017
+	Over the weekend I watched the videos. I understood the general idea and what components are needed for the chatroom. I will have
+	to look over the specifics though as we didn't learn some of the stuff in class. This class period, I will be looking into voice 
+	chat and ways to implement that into the chatroom. Our project also revolves around basically one computer communicating with another
+	so two classes will have to be made with different code. It seems that the majority of this week's class time will be devoted to 
+	learning and understanding parts we need to have our classes come together and work properly.
+	
+	
