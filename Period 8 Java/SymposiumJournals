@@ -20,3 +20,9 @@ May 8, 2017
 	learning and understanding parts we need to have our classes come together and work properly.
 	Conclusion: More research required.
 	
+May 11, 2017
+	Finishing up the videos. Starting to understand more about what is needed for the project and how the server-side code is going 
+	to interact with the client-side code. 
+	Goal: Finish up all the videos and fully understand everything. I'm implementing emojis into the chatroom so I will also need
+		  to start research on how to detect and change character inputs when it detects characters that could make an emoji.
+	
