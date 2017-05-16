@@ -29,4 +29,7 @@ May 11, 2017
 May 12, 2017
 	Starting research on how to import images into the chatroom and I'll be working with Mahin on that because he is importing
 	pure images and I'm importing tinier images for the emojis. 
-	
+
+May 16, 2017
+	I'm going to be importing an emoji library and using they're unicodes and String characters to detect them in order
+	for it to change dynamically in the text area.
