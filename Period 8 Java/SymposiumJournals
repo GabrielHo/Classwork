@@ -33,3 +33,7 @@ May 12, 2017
 May 16, 2017
 	I'm going to be importing an emoji library and using they're unicodes and String characters to detect them in order
 	for it to change dynamically in the text area.
+
+May 17, 2017
+	Downloaded jar files for the emoji library and will import the libraries into the project. Also started making methods
+	for checking and changing characters in the string message into emojis.
