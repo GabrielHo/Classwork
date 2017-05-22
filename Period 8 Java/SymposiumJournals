@@ -37,3 +37,8 @@ May 16, 2017
 May 17, 2017
 	Downloaded jar files for the emoji library and will import the libraries into the project. Also started making methods
 	for checking and changing characters in the string message into emojis.
+	
+May 22, 2017
+	Added emoji jar files into a new folder in the SymposuiumServerSide and SymnposiumClientSide projects.
+	I'm going to test the methods out and see if it works and how I can implement it into our current code. If it works I'll 
+	start implementing them into the methods I am creating. 
