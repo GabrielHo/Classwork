@@ -42,3 +42,7 @@ May 22, 2017
 	Added emoji jar files into a new folder in the SymposuiumServerSide and SymnposiumClientSide projects.
 	I'm going to test the methods out and see if it works and how I can implement it into our current code. If it works I'll 
 	start implementing them into the methods I am creating. 
+
+May 23, 2017
+	Adding the jar files creates errors. I will have to do some research on how to fix it. My goal is to have the jar files working 
+	with our code.
