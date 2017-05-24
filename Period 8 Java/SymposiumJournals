@@ -46,3 +46,10 @@ May 22, 2017
 May 23, 2017
 	Adding the jar files creates errors. I will have to do some research on how to fix it. My goal is to have the jar files working 
 	with our code.
+	
+May 24, 2017
+	I got the jar files working with the base code we wrote for the chat app. I was missing java-json. Everything is working together 
+	now and I should be able to create the methods. A little problem I saw was that the console displayed mystery boxes instead
+	of the actual emoji face. I could fix this problem after I make sure my methods work after I finish them. My goal for now 
+	is to create my Emoji dectecting methods so that I can go through an input that a user types and be able to change any 
+	symbols they type(i.e :() into the actual emoji for it. 
