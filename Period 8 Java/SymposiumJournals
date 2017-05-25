@@ -53,3 +53,8 @@ May 24, 2017
 	of the actual emoji face. I could fix this problem after I make sure my methods work after I finish them. My goal for now 
 	is to create my Emoji dectecting methods so that I can go through an input that a user types and be able to change any 
 	symbols they type(i.e :() into the actual emoji for it. 
+	
+May 25, 2017
+	Emoji method works for the most part. Bugs that occur now are that the messages that each person writes to each other
+	only shows up on the writer's side of the chat. Emojis also change for the reciever but is still the original String
+	for the writer. Goals are to fix these problems.
