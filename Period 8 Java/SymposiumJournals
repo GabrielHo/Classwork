@@ -58,3 +58,7 @@ May 25, 2017
 	Emoji method works for the most part. Bugs that occur now are that the messages that each person writes to each other
 	only shows up on the writer's side of the chat. Emojis also change for the reciever but is still the original String
 	for the writer. Goals are to fix these problems.
+	
+May 30, 2017
+	Veeraj worked with me in trying to find out how to import custom fonts into JFrame. I'm installing a custom font that supports emojis
+	so that the actual emoji will show up in the messages. Goals are to find a solution and to finish up other emoji methods.
