@@ -62,3 +62,7 @@ May 25, 2017
 May 30, 2017
 	Veeraj worked with me in trying to find out how to import custom fonts into JFrame. I'm installing a custom font that supports emojis
 	so that the actual emoji will show up in the messages. Goals are to find a solution and to finish up other emoji methods.
+
+May 31, 2017
+	I updated and finished the method I was working on. Font and other bugs in the app are still present. I'm going to focus on completing the methods
+	first and debug and such when the group merges everything.
