@@ -66,3 +66,7 @@ May 30, 2017
 May 31, 2017
 	I updated and finished the method I was working on. Font and other bugs in the app are still present. I'm going to focus on completing the methods
 	first and debug and such when the group merges everything.
+
+June 1, 2017
+	I created a method that allows the user to manually type in an emoji they want into his message and display the emoji in the message.
+	We decided that all bugs would be resolved together when we merged our branches.
