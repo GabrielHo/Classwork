@@ -70,3 +70,8 @@ May 31, 2017
 June 1, 2017
 	I created a method that allows the user to manually type in an emoji they want into his message and display the emoji in the message.
 	We decided that all bugs would be resolved together when we merged our branches.
+	
+June 5, 2017
+	Working on a new method that would check the message for everything(emoji symbols and manual emoji term) and change the entire message
+	into the message with the corresponding emojis. Goal is to finish by tomorrow.
+	Note: Need to remind Nockles to help with font.
