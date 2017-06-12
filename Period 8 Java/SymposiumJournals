@@ -85,4 +85,9 @@ June 7, 2017
 	We discussed as a group where we currently are in our project and our progress for our branches. We have decided to start merging
 	our branches and fix the merge conflicts that come with it. After we successfully merge everything together, we will fix any bugs
 	and problems together (this includes putting the font into the chatroom).
-	
+
+June 12, 2017
+	Joyce and I are going to the Symposium now. This class period I asked Tamanna for help for putting in my custom font into JFrame.
+	Thankfully she had a solution and she showed me the code I needed to install it. I'm missing a few components for it to work properly
+	so I made a new components package in the source folder that will have the classes I need for Tamanna's method to work. My goal is
+	to finish the components and have the font working by the Symposium. I also need to merge the others' branches into mine.
